@@ -5,7 +5,7 @@ import UploadCareHeader from "../uploadCareHeader/uploadCareHeader";
 
 import "./App.css";
 
-function App({ apiKey }) {
+function App({ apiKey, handleChangeKey }) {
   const widgetRef = useRef(null);
   const [fileUrl, setFileUrl] = useState("");
   const [isCopied, setIsCopied] = useState(false);
@@ -14,6 +14,7 @@ function App({ apiKey }) {
     widgetRef.current = uploadcare.Widget("#uploader", {
       publicKey: apiKey,
       clearable: true,
+      tabs: "file url facebook gdrive gphotos",
     });
 
     widgetRef.current.openDialog();
@@ -37,21 +38,29 @@ function App({ apiKey }) {
   };
 
   return (
-    <div className="App">
-      <UploadCareHeader />
-      <div className="upload-input-container">
-        <input id="uploader" type="hidden" />
-      </div>
-      {fileUrl && (
-        <div
-          className={`code-block-container ${
-            isCopied ? "code-block-copied" : ""
-          }`}
-        >
-          <code className="code-block">{fileUrl}</code>
-          <Button title={isCopied ? "Copied" : "Copy"} onClick={handleClick} />
+    <div className="app-container">
+      <div className="App">
+        <UploadCareHeader />
+        <div className="upload-input-container">
+          <input id="uploader" type="hidden" />
         </div>
-      )}
+        {fileUrl && (
+          <div
+            className={`code-block-container ${
+              isCopied ? "code-block-copied" : ""
+            }`}
+          >
+            <code className="code-block">{fileUrl}</code>
+            <Button
+              title={isCopied ? "Copied" : "Copy"}
+              onClick={handleClick}
+            />
+          </div>
+        )}
+      </div>
+      <div className="change-key-button-container">
+        <Button title="Change Key" onClick={handleChangeKey} />
+      </div>
     </div>
   );
 }

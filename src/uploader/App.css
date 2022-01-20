@@ -1,7 +1,14 @@
-.App {
+.app-container {
+  display: flex;
+  flex-direction: column;
   height: 300px;
   width: 350px;
   padding: 1rem;
+  box-sizing: border-box;
+}
+
+.App {
+  flex: 1;
 }
 
 .upload-input-container {
@@ -39,4 +46,8 @@
   100% {
     background-color: #0001;
   }
+}
+
+.change-key-button-container {
+  text-align: center;
 }
