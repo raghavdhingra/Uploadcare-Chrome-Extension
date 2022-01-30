@@ -19,7 +19,7 @@ const ApiKeyComponent = ({ handleAPIKey }) => {
       method: "POST",
       data: formData,
     });
-    console.log(data.error);
+
     if (
       data?.error &&
       data.error.error_code === "FilesRequiredError" &&
@@ -27,7 +27,7 @@ const ApiKeyComponent = ({ handleAPIKey }) => {
     ) {
       handleAPIKey(apiKey);
     } else {
-      setError("UploadCare Public Key is Invalid");
+      setError("Uploadcare Public Key is Invalid");
     }
     setIsLoading(false);
   };
@@ -39,7 +39,7 @@ const ApiKeyComponent = ({ handleAPIKey }) => {
         <input
           type="text"
           className="apiKey-input"
-          placeholder="UploadCare Public Key"
+          placeholder="Uploadcare Public Key"
           value={apiKey}
           onChange={(e) => setApiKey(e.target.value)}
         />

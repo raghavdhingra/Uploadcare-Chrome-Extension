@@ -1,33 +1,34 @@
 import React, { useEffect, useState } from "react";
 import App from "./uploader/App";
 import ApiKeyComponent from "./apiKeyComponent/apiKeyComponent";
-
-const UPLOAD_CARE_KEY = "upload-care-api-key";
+import { getItem, removeItem, setItem } from "./utils/function";
+import { UPLOAD_CARE_KEY } from "./utils/constants";
 
 const Route = () => {
   const [apiKey, setApiKey] = useState("");
 
   useEffect(() => {
-    // const localApiKey = localStorage.getItem(UPLOAD_CARE_KEY);
-    let localApiKey;
-    window.chrome.storage.local.get([UPLOAD_CARE_KEY], function (result) {
-      localApiKey = result[UPLOAD_CARE_KEY];
+    const fetch = async () => {
+      // const localApiKey = localStorage.getItem(UPLOAD_CARE_KEY);
+      const localApiKey = await getItem(UPLOAD_CARE_KEY);
       if (localApiKey) {
         setApiKey(localApiKey);
       }
-    });
+    };
+
+    fetch();
   }, []);
 
-  const handleChangeKey = () => {
+  const handleChangeKey = async () => {
     // localStorage.removeItem(UPLOAD_CARE_KEY);
-    window.chrome.storage.local.clear();
+    await removeItem(UPLOAD_CARE_KEY);
     setApiKey("");
   };
 
-  const handleAPIKey = (key) => {
+  const handleAPIKey = async (uploadcare_api_key) => {
     // localStorage.setItem(UPLOAD_CARE_KEY, key);
-    window.chrome.storage.local.set({ [UPLOAD_CARE_KEY]: key });
-    setApiKey(key);
+    await setItem(UPLOAD_CARE_KEY, uploadcare_api_key);
+    setApiKey(uploadcare_api_key);
   };
 
   return apiKey ? (

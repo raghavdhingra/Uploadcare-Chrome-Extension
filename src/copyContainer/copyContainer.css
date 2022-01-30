@@ -1,0 +1,32 @@
+.code-block-container {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  background-color: #0001;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin: 0.5rem auto;
+  border-left: 5px solid #0003;
+}
+
+.code-block {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.code-block-copied {
+  background-color: #afa;
+  animation: copied 1s forwards;
+}
+
+@keyframes copied {
+  50% {
+    background-color: #afa;
+  }
+
+  100% {
+    background-color: #0001;
+  }
+}

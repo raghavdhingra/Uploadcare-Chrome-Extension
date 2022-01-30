@@ -1,6 +1,6 @@
 {
-  "short_name": "UploadCare",
-  "name": "UploadCare | Upload files anytime",
+  "short_name": "Uploadcare",
+  "name": "Uploadcare | Upload files anytime",
   "manifest_version": 2,
   "version": "1.0.0",
   "description": "Uploadcare extension is used for uploading any file to the cloud and get the url link to share, or to be used within the application",
@@ -15,7 +15,7 @@
   "browser_action": {
     "default_icon": "upload-care.png",
     "default_popup": "index.html",
-    "default_title": "UploadCare"
+    "default_title": "Uploadcare"
   },
   "background": {},
   "permissions": ["storage"]

@@ -1,8 +1,23 @@
 .button {
   background-color: #1a73e8;
   color: #fff;
-  padding: 0.2rem 0.5rem;
+  padding: 0.5rem 0.8rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+.button-link {
+  background-color: transparent;
+  color: #1a73e8;
+  text-decoration: underline;
+}
+
+.button-danger {
+  background-color: red;
 }

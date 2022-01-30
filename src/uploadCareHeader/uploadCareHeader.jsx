@@ -8,9 +8,9 @@ const UploadCareHeader = () => {
       <img
         src="/upload-care.png"
         className="upload-care-logo"
-        alt="UploadCare"
+        alt="Uploadcare"
       />
-      <h2>UploadCare</h2>
+      <h2>Uploadcare</h2>
     </header>
   );
 };
