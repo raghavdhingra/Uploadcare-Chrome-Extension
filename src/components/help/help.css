@@ -8,6 +8,11 @@
   margin: 0.5rem 0;
 }
 
-.help-section-list-item a {
+.help-section-list-item a,
+.help-section-paragraph a {
   color: #1a73e8;
+}
+
+.help-section-paragraph {
+  margin-bottom: 0.5rem;
 }
