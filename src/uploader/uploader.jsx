@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import uploadcare from "uploadcare-widget";
-import Button from "../button/button";
-import CopyContainer from "../copyContainer/copyContainer";
-import UploadCareHeader from "../uploadCareHeader/uploadCareHeader";
+import Button from "../components/button/button";
+import CopyContainer from "../components/copyContainer/copyContainer";
+import UploadCareHeader from "../components/header/header";
 import { UPLOAD_CARE_FILES } from "../utils/constants";
 import { getItem, removeItem, setItem } from "../utils/function";
 
-import "./App.css";
+import "./uploader.css";
 
 function App({ apiKey, handleChangeKey }) {
   const widgetRef = useRef(null);
@@ -27,32 +27,21 @@ function App({ apiKey, handleChangeKey }) {
       widgetRef.current.onUploadComplete(async (data) => {
         setFileUrl(data.cdnUrl);
 
-        // const uploadcareFile = localStorage.getItem(UPLOAD_CARE_FILES);
         const uploadcareFile = await getItem(UPLOAD_CARE_FILES);
 
         if (uploadcareFile) {
           const dataFiles = JSON.parse(uploadcareFile);
 
           if (Array.isArray(dataFiles)) {
-            const newFileList = [...JSON.parse(uploadcareFile), data.cdnUrl];
+            const newFileList = [data.cdnUrl, ...dataFiles];
             setHistoryFiles(newFileList);
-
             const dataListString = JSON.stringify(newFileList);
-
-            // localStorage.setItem(
-            //   UPLOAD_CARE_FILES,
-            //   dataListString
-            // );
-
             await setItem(UPLOAD_CARE_FILES, dataListString);
           }
         } else {
-          // localStorage.setItem(
-          //   UPLOAD_CARE_FILES,
-          //   JSON.stringify([data.cdnUrl])
-          // );
-
-          await setItem(UPLOAD_CARE_FILES, JSON.stringify([data.cdnUrl]));
+          const dataFiles = [data.cdnUrl];
+          await setItem(UPLOAD_CARE_FILES, JSON.stringify(dataFiles));
+          setHistoryFiles(dataFiles);
         }
       });
     }
@@ -60,7 +49,6 @@ function App({ apiKey, handleChangeKey }) {
 
   useEffect(() => {
     const fetch = async () => {
-      // const uploadcareFile = localStorage.getItem(UPLOAD_CARE_FILES);
       const uploadcareFile = await getItem(UPLOAD_CARE_FILES);
 
       if (uploadcareFile) {
@@ -76,14 +64,13 @@ function App({ apiKey, handleChangeKey }) {
   }, []);
 
   const handleClearHistory = () => {
-    // localStorage.removeItem(UPLOAD_CARE_FILES);
     removeItem(UPLOAD_CARE_FILES);
     setHistoryFiles([]);
   };
 
   return (
-    <div className="app-container">
-      <div className="App">
+    <div className="uploader-component">
+      <div className="uploader-wrapper">
         <UploadCareHeader />
         {!isHistory && (
           <>

@@ -1,8 +1,8 @@
 import React from "react";
 
-import "./uploadCareHeader.css";
+import "./header.css";
 
-const UploadCareHeader = () => {
+const Header = () => {
   return (
     <header className="uploadCare-header">
       <img
@@ -15,4 +15,4 @@ const UploadCareHeader = () => {
   );
 };
 
-export default UploadCareHeader;
+export default Header;

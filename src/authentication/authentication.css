@@ -1,15 +1,15 @@
-.apiKey {
+.auth {
   width: 400px;
   padding: 1rem;
   text-align: center;
 }
 
-.apiKey-input-container,
-.apiKey-button-container {
+.auth-input-container,
+.auth-button-container {
   margin: 1rem 0;
 }
 
-.apiKey-input {
+.auth-input {
   font-size: 1rem;
   width: 100%;
   padding: 0.4rem 1rem;
@@ -18,23 +18,27 @@
   transition: 0.2s ease;
 }
 
-.apiKey-input:focus {
+.auth-input:focus {
   outline: none;
   border: 1px solid #0003;
   box-shadow: 0 0 1px 2px #4294ff;
 }
 
-.apiKey-button {
+.auth-button {
   font-size: 1rem;
   padding: 0.4rem 1rem;
 }
 
-.apiKey-button:disabled {
+.auth-button:disabled {
   background-color: #0003;
   pointer-events: none;
   cursor: not-allowed;
 }
 
-.apiKey-error {
+.auth-error {
   color: red;
+}
+
+.auth-help-button {
+  font-size: 1rem;
 }

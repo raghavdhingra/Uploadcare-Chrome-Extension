@@ -1,4 +1,4 @@
-.app-container {
+.uploader-component {
   display: flex;
   flex-direction: column;
   height: 300px;
@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 
-.App {
+.uploader-wrapper {
   flex: 1;
 }
 

@@ -1,0 +1,13 @@
+.help-section-list {
+  margin: 1rem 0;
+  padding: 0 1rem;
+  text-align: left;
+}
+
+.help-section-list-item {
+  margin: 0.5rem 0;
+}
+
+.help-section-list-item a {
+  color: #1a73e8;
+}
