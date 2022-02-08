@@ -1,4 +1,9 @@
-import { IS_DEVELOPEMENT, ENVIRONMENT_LIST } from "./constants";
+import {
+  IS_DEVELOPEMENT,
+  ENVIRONMENT_LIST,
+  UPLOAD_CARE_FILES,
+  UPLOAD_CARE_FILE_NUMBER,
+} from "./constants";
 
 export const getItem = (key) => {
   return new Promise((res, rej) => {
@@ -31,4 +36,18 @@ export const removeItem = (key) => {
       return res(result);
     });
   });
+};
+
+export const fetchHistoryList = async (length) => {
+  const uploadcareFile = await getItem(UPLOAD_CARE_FILES);
+
+  if (uploadcareFile) {
+    const dataFiles = JSON.parse(uploadcareFile);
+
+    if (Array.isArray(dataFiles)) {
+      return dataFiles.splice(length || 0, UPLOAD_CARE_FILE_NUMBER);
+    }
+  }
+
+  return [];
 };

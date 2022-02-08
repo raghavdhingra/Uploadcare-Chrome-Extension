@@ -23,29 +23,3 @@
 .change-key-button-wrapper {
   flex: 1;
 }
-
-.history-no-image-header {
-  text-align: center;
-  margin-top: 1rem;
-  color: blue;
-}
-
-.history-container {
-  max-height: 200px;
-  overflow: auto;
-}
-
-.history-list-item {
-  gap: 0.5rem;
-  display: flex;
-  align-items: center;
-}
-
-.history-image {
-  flex-shrink: 0;
-  height: 30px;
-  width: 30px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}

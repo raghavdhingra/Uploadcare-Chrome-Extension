@@ -1,0 +1,43 @@
+.history-container {
+  max-height: 200px;
+  overflow: auto;
+}
+
+.history-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.history-container::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+.history-list-item {
+  gap: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.history-list-item-button {
+  text-align: center;
+}
+
+.history-list-load-button {
+  background-color: #999;
+}
+
+.history-image {
+  flex-shrink: 0;
+  height: 30px;
+  width: 30px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 2px;
+}
+
+.history-no-image-header {
+  text-align: center;
+  margin-top: 1rem;
+  color: blue;
+}
