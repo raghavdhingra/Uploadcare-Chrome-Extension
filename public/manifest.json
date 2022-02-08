@@ -2,7 +2,7 @@
   "short_name": "Uploadcare",
   "name": "Uploadcare | File uploader",
   "manifest_version": 3,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A browser extension that allows you to upload content to the cloud and get a url link to share or use in developing applications.",
   "icons": {
     "16": "upload-care-16.png",
