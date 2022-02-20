@@ -45,6 +45,5 @@ npm start
 
 This will initiate a localhost server on the browser tab and you can update the functionality.
 
-
 To test within the chrome extension tab, you need to build the application and click refresh package button on the chrome extension page.
 ![image](https://user-images.githubusercontent.com/24492201/154844643-73cd31c7-7b96-4a6f-a91f-ba7bb428f8b5.png)
