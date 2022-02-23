@@ -2,12 +2,14 @@
 
 It's a browser extension that allows you to upload content to the cloud and get a url link to share or use in developing applications.
 
-## Installation and testing on Local Browser
+## Testing on Browser
 
-Prerequisites:
+#### Prerequisites:
 
 1. Git and Node need to be installed on the local system
 2. Should have a Chrome browser
+
+### Installation
 
 1. Open the terminal, and clone the repository
 ```
