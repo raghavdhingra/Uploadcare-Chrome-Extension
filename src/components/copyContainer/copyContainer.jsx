@@ -3,8 +3,8 @@ import Button from "../button/button";
 
 import "./copyContainer.css";
 
-const CopyContainer = ({ data }) => {
-  const [isCopied, setIsCopied] = useState(false);
+const CopyContainer = ({ data, initialStateCopied }) => {
+  const [isCopied, setIsCopied] = useState(initialStateCopied || false);
 
   useEffect(() => {
     if (isCopied) {

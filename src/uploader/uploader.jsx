@@ -32,11 +32,26 @@ function App({ apiKey, handleChangeKey }) {
         tabs: "file url facebook gdrive gphotos",
       });
 
-      widgetRef.current.openDialog();
+      widgetRef.current.onDialogOpen((dialog) => {
+        function uploadFromClipboard(e) {
+          let data = e.clipboardData;
+          if (!!data && !!data.items.length) {
+            // check if clipboard data is image
+            if (data.items[0].type.indexOf("image") !== 0) {
+              alert("No image in the clipboard");
+              return;
+            }
+            let blob = e.clipboardData.items[0].getAsFile();
+            dialog.addFiles("object", [blob]);
+          }
+        }
+        window.addEventListener("paste", uploadFromClipboard);
+      });
 
       widgetRef.current.onUploadComplete(async (data) => {
         const { cdnUrl: fileURL } = data;
         setFileUrl(fileURL);
+        navigator.clipboard.writeText(fileURL);
         setHistoryFiles((prev) => [fileURL, ...prev]);
 
         const uploadcareFile = await getItem(UPLOAD_CARE_FILES);
@@ -54,6 +69,8 @@ function App({ apiKey, handleChangeKey }) {
           await setItem(UPLOAD_CARE_FILES, JSON.stringify(dataFiles));
         }
       });
+
+      widgetRef.current.openDialog();
     }
   }, [apiKey, isHistory]);
 
@@ -76,7 +93,7 @@ function App({ apiKey, handleChangeKey }) {
             <div className="upload-input-container">
               <input id="uploader" type="hidden" />
             </div>
-            {fileUrl && <CopyContainer data={fileUrl} />}
+            {fileUrl && <CopyContainer initialStateCopied data={fileUrl} />}
           </>
         )}
       </div>
