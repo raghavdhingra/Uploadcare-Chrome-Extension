@@ -12,11 +12,13 @@ It's a browser extension that allows you to upload content to the cloud and get 
 ### Installation
 
 1. Open the terminal, and clone the repository
+
 ```
-git clone https://github.com/raghavdhingra/UploadCare-Chrome-Extension.git
+git clone https://github.com/raghavdhingra/Uploadcare-Chrome-Extension.git
 ```
 
 2. Install the dependencies of the project
+
 ```
 npm install
 ```
@@ -24,23 +26,26 @@ npm install
 3. Rename `.env.example` file to `.env` file. This will prevent the inline script build by react build command and helps in maintaining the Content Security Policy.
 
 4. Build the react project to plain HTML, CSS and Javascript files by:
+
 ```
 npm run build
 ```
+
 This will create a build folder in the base directory of the project.
 
 5. Open the Chrome Browser, and type:
+
 ```
 chrome://extensions
 ```
 
 6. Click on **Load Unpacked** button and select the same **build** folder
-It will be ready to use.
-
+   It will be ready to use.
 
 ### Development testing
 
 For updating the extension, or to add up a feature, run the project on the localhost by typing:
+
 ```
 npm start
 ```
