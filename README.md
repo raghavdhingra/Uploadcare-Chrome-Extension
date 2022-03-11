@@ -13,7 +13,7 @@ It's a browser extension that allows you to upload content to the cloud and get 
 
 1. Open the terminal, and clone the repository
 ```
-git clone https://github.com/raghavdhingra/UploadCare-Chrome-Extension.git
+git clone https://github.com/raghavdhingra/Uploadcare-Chrome-Extension.git
 ```
 
 2. Install the dependencies of the project
