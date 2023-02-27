@@ -50,6 +50,10 @@ For updating the extension, or to add up a feature, run the project on the local
 npm start
 ```
 
+```
+INLINE_RUNTIME_CHUNK=false npm run build
+```
+
 This will initiate a localhost server on the browser tab and you can update the functionality.
 
 To test within the chrome extension tab, you need to build the application and click refresh package button on the chrome extension page.
