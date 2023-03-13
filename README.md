@@ -1,4 +1,6 @@
-# Uploadcare Chrome Extension
+# Uploo | Chrome Extension
+
+![Uploo-1400](https://user-images.githubusercontent.com/24492201/224741910-dd77065b-8f6f-4ded-984b-27eea49ae4dc.jpg)
 
 It's a browser extension that allows you to upload content to the cloud and get a url link to share or use in developing applications.
 
